@@ -57,9 +57,14 @@ $ npm run test
 ## Como executar o projeto
 
 - Na raiz do projeto renomeie o arquivo .env.example para .env;
-- Execute o comando docker-compose up;
-- No container execute as migrações com o comando npx sequelize db:migrate e em seguida npx sequelize-cli db:seed:all.
-
+- Execute o comando: 
+``` docker-compose up
+```
+- No container execute as migrações com os comando 
+```npx sequelize db:migrate
+```
+```npx sequelize-cli db:seed:all
+```
 
 
 - Autor - Jonathan Cruz
