@@ -19,7 +19,7 @@ Na pasta seeders, temos um seeder com dados pré criados para nossa tabela de al
 
 Na pasta **config**, os arquivos **db.js**, arquivo base que contém as informações de nosso banco de dados tais como usuário, nome do banco, senha de banco, tipo de banco de dados, e o arquivo **config.js**, arquivo de configurações do banco de dados gerada automática pelo nosso sequelize, importado pelo arquivo na raiz do projeto **.sequelizerc**.
 
-Temos um arquivo .env, temos nossas variáveis de ambientes utilizadas pela api e pelo arquivo docker-compose.yml.
+Temos um arquivo **.env**, temos nossas variáveis de ambientes utilizadas pela api e pelo arquivo docker-compose.yml.
 
 Ainda na raiz temos arquivos de logs de **erros(error.log)** e de **informações(info.log)**.
 
@@ -34,8 +34,8 @@ O arquivo **server.js**, é neste arquivo que é incluído o **app.js**, respons
 - sequelize; 
 - dotenv; 
 - factory-girl;
-- faker-br 
-- winston
+- faker-br;
+- winston;
 - pg, pg-hstore e pg-promise;
 - cors;
 - jest
