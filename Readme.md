@@ -55,8 +55,13 @@ Para executar os testes digite o comando:
     npm run test
 ```
 
-## Como executar o projeto
+## Como executar o projeto automticamente
 
+```
+    sh start.sh
+```
+
+## Como executar o projeto manualmente
 - Na raiz do projeto renomeie o arquivo **.env.example** para **.env**;
 - Execute o comando: 
 ```
