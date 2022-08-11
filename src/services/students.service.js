@@ -1,5 +1,6 @@
 const studentsModel = require('../models/students.model');
 const logger = require('../../logger');
+const cpfValidator = require('node-cpf');
 
 module.exports = {
     async getAll(req, res) {
@@ -30,18 +31,23 @@ module.exports = {
 
     async create(req, res){
 
+        req.body.cpf = cpfValidator.unMask(req.body.cpf);
+
         const {name, email, cpf, ra} = req.body;
 
         try {
             const student = await studentsModel.create({name, email, cpf, ra});
             return res.status(201).json(student);
         } catch (error) {
+            console.log(error);
             logger.error(error);
             return res.status(500).json('Erro interno contate o administrador do sistema.');
         }
     },
 
     async update(req, res){
+        req.body.cpf = cpfValidator.unMask(req.body.cpf);
+
         const {name, email, cpf, ra} = req.body;
         const id = req.params.id;
         const Sequelize = require('sequelize');
