@@ -42,7 +42,9 @@ O arquivo **server.js**, é neste arquivo que é incluído o **app.js**, respons
 
 ## O que você melhoraria se tivesse mais tempo
 
-Refinaria e faria mais testes e adicionaria JWT.
+- Refinaria e faria mais testes;
+- Adicionaria JWT;
+- Criaria uma camada regras de validações.
 
 ## Quais requisitos obrigatórios que não foram entregues
 
