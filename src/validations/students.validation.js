@@ -23,9 +23,9 @@ const create = () => [
     .custom((value, {req}) => {
         return studentsModel.findOne({ where: {email: value}, _id:{ $ne: req.params.id } })
            .then(student => {
-                if (student) {
-                    return Promise.reject('O Email informado já está cadastrado!')
-                }    
+              if (student) {
+                return Promise.reject('O Email informado já está cadastrado!')
+              }    
             })
      }),
   check('cpf')
@@ -40,9 +40,9 @@ const create = () => [
     .custom((value, {req}) => {
         return studentsModel.findOne({ where: {cpf: value}, _id:{ $ne: req.params.id } })
            .then(student => {
-                if (student) {
-                    return Promise.reject('O CPF informado já está cadastrado!')
-                }    
+              if (student) {
+                return Promise.reject('O CPF informado já está cadastrado!')
+              }    
             })
      })
     .custom(cpf => {
@@ -62,9 +62,9 @@ const create = () => [
     .custom((value, {req}) => {
       return studentsModel.findOne({ where: {ra: value}, _id:{ $ne: req.params.id } })
          .then(student => {
-              if (student) {
-                  return Promise.reject('O Registro Acadêmico informado já está cadastrado!')
-              }    
+            if (student) {
+              return Promise.reject('O Registro Acadêmico informado já está cadastrado!')
+            }    
           })
    }),
   (req, res, next) => {
@@ -94,11 +94,12 @@ const update = () => [
     .withMessage('Endereço de email inválido!')
     .bail()
     .custom((value, {req}) => {
-        return studentsModel.findOne({ where: {email: value}, _id:{ $ne: req.params.id } })
+      console.log(req.params.id)
+        return studentsModel.findOne({ where: {email: value} })
            .then(student => {
-                if (student) {
-                    return Promise.reject('O Email informado já está cadastrado!')
-                }    
+              if (student && student.id != req.params.id) {
+                return Promise.reject('O Email informado já está sendo usado!')
+              }    
             })
      })
 ];
